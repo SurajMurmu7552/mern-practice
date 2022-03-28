@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Volume of sphere</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        height: 100vh;
+        width: 100vw;
+        display: grid;
+        place-items: center;
+      }
+      form {
+        height: 200px;
+        width: 400px;
+        padding: 4px;
+        border: 1px solid #333;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: flex-start;
+      }
+      input {
+        width: 100%;
+        height: 30px;
+      }
+      input[type='submit'] {
+        width: auto;
+        height: 30px;
+        padding: 0 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="form-input">
+      <h4>Input radius value and get the volume of sphere</h4>
+      <label for="radius">Radius*</label>
+      <input
+        type="number"
+        name="radius"
+        id="radius"
+        required
+        autocomplete="off"
+      />
+      <label for="vol">Volume</label>
+      <input type="number" name="vol" id="vol" autocomplete="off" disabled />
+      <!-- <button type="submit">Calculate</button> -->
+      <input type="submit" value="Calculate" />
+    </form>
+    <script>
+      let form = document.getElementById('form-input');
+      form.onsubmit = (e) => {
+        e.preventDefault();
+        let radius = document.getElementById('radius').value,
+          vol = document.getElementById('vol');
+        if (radius < 0) alert('enter a +ve num');
+        else {
+          let cal = 4.19 * radius ** 3;
+          vol.value = cal;
+          console.log(cal);
+        }
+      };
+    </script>
+  </body>
+</html>

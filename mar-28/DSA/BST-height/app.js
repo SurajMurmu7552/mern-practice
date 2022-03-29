@@ -17,6 +17,7 @@ function maxDepth(node) {
     /* compute the depth of each subtree */
     let lDepth = maxDepth(node.left);
     let rDepth = maxDepth(node.right);
+    console.log(lDepth, rDepth);
 
     /* use the larger one */
     if (lDepth > rDepth) return lDepth + 1;
@@ -32,4 +33,4 @@ root.right = new Node(3);
 root.left.left = new Node(4);
 root.left.right = new Node(5);
 
-document.write('Height of tree is : ' + maxDepth(root));
+console.log('Height of tree is : ' + maxDepth(root));

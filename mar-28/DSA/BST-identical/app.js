@@ -1,25 +1,18 @@
 // BST node
 class Node {
-  // Utility function to create a new Node
   constructor(data) {
     this.data = data;
     this.left = this.right = null;
   }
 }
 
-// Function to perform inorder traversal
 function inorder(root) {
   if (root == null) return;
-
   inorder(root.left);
-
   document.write(root.data + ' ');
-
   inorder(root.right);
 }
 
-// Function to check if two BSTs
-// are identical
 function isIdentical(root1, root2) {
   // Check if both the trees are empty
   if (root1 == null && root2 == null) return 1;
@@ -40,7 +33,6 @@ function isIdentical(root1, root2) {
   }
 }
 
-// Driver code
 let root1 = new Node(5);
 let root2 = new Node(5);
 root1.left = new Node(3);
@@ -53,5 +45,5 @@ root2.right = new Node(8);
 root2.left.left = new Node(2);
 root2.left.right = new Node(4);
 
-if (isIdentical(root1, root2) == 1) document.write('Both BSTs are identical');
-else document.write('BSTs are not identical');
+if (isIdentical(root1, root2) == 1) console.log('Both BSTs are identical');
+else console.log('BSTs are not identical');

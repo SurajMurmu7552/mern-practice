@@ -20,6 +20,6 @@ function lenOfObject(obj) {
   console.log(Object.keys(obj).length);
 }
 
-// listProp(student);
-// delRoll(student);
-// lenOfObject(student);
+listProp(student);
+delRoll(student);
+lenOfObject(student);

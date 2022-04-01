@@ -15,7 +15,7 @@ function removeEleFromBack(array) {
 
 function addEleToFront(array, ele) {
   let arr = [ele];
-  for (let i = 1; i < array.length; i++) arr[i] = array[i];
+  for (let i = 0; i < array.length; i++) arr[i + 1] = array[i];
   return arr;
 }
 

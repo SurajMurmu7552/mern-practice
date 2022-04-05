@@ -1,10 +1,17 @@
-// let entry = prompt("Enter a string"),
-//   chop = 1 * prompt("Enter the choping nmber");
+let entry = prompt("Enter a string"),
+  chop = 1 * prompt("Enter the choping nmber");
 
-let entry = "hello there my name is suraj murmu";
+// let entry = "hello there my name is suraj murmu";
 
-// let chunks = (str, n = 1) => {
-//   str.split("").map(el => )
-// };
+//removing space and showing results
 
-console.log(chunks(entry));
+let chunks = (str, n = 1) => {
+  return [
+    ...str
+      .split(" ")
+      .join("")
+      .match(new RegExp(`.{1,${n}}`, "g")),
+  ];
+};
+
+console.log(chunks(entry, chop));

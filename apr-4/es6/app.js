@@ -34,14 +34,16 @@
 // let clock = new Clock({ template: "h:m:s" });
 // clock.start();
 
+//Exercise 1
+
 class Clock {
-  timer;
+  #timer;
 
   constructor({ template }) {
     this.template = template;
   }
 
-  render = () => {
+  #render = () => {
     let date = new Date();
 
     let hours = date.getHours();
@@ -62,11 +64,11 @@ class Clock {
   };
 
   stop = () => {
-    clearInterval(timer);
+    clearInterval(this.#timer);
   };
   start = () => {
-    this.render();
-    this.timer = setInterval(render, 1000);
+    this.#render();
+    this.#timer = setInterval(this.#render, 1000);
   };
 }
 

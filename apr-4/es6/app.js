@@ -37,11 +37,15 @@
 //Exercise 1
 
 class Clock {
+  //private variable
   #timer;
 
+  //constructor
   constructor({ template }) {
     this.template = template;
   }
+
+  //private methods
 
   #render = () => {
     let date = new Date();
@@ -63,6 +67,8 @@ class Clock {
     console.log(output);
   };
 
+  //public methods
+
   stop = () => {
     clearInterval(this.#timer);
   };
@@ -72,6 +78,7 @@ class Clock {
   };
 }
 
+//instantiate
 const clock = new Clock({ template: "h:m:s" });
 clock.start();
 

@@ -1,33 +1,9 @@
 // // api - https://reqres.in/api/users?page=2
 
-// //fetch data
-
-// async function* fetchData() {
-//   try {
-//     let response = yield fetch("https://reqres.in/api/users?page=2");
-//     if (response.status === 200) {
-//       let data = yield response.json();
-//       yield data;
-//     }
-//   } catch (err) {
-//     throw new Error(err);
-//   }
-// }
-
-// // fetchData()
-// //   .next()
-// //   .then((res) => console.log(res.value));
-
-// console.log(fetchData().next());
-// console.log(fetchData().next());
-// console.log(
-//   fetchData()
-//     .next()
-//     .then((data) => console.log(data))
-// );
+//fetches the api using async/await as a generator function
 
 async function* callAPI() {
-  const response = await fetch("https://reqres.in/api/users?page=2", {
+  const response = await fetch("https://reqres.in/api/products", {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -40,27 +16,31 @@ async function* callAPI() {
   yield posts;
 }
 
+//called generator function
+
 const callAPIObject = callAPI();
 
+//added to html using .then()
 callAPIObject.next().then((res) => {
   let data = res.value.data;
+  console.log(data);
   let root = document.querySelector(".root");
   data.forEach((entry) => {
     root.innerHTML += `<div class="card" style="width: 90%; margin-top: 20px">
-      <img src="${entry.avatar}" class ="card-img-top"/>
-      <div class="card-body">
         <ul class="list-group list-group-flush">
           <li class="list-group-item">
             <p class="card-text"><strong>ID: </strong>${entry.id}</p>
           </li>
           <li class="list-group-item">
-            <p class="card-text"><strong>Name: </strong>${entry.first_name} ${entry.last_name}</p>
+            <p class="card-text"><strong>Name: </strong>${entry.name}</p>
           </li>
           <li class="list-group-item">
-            <p class="card-text"><strong>Email: </strong>${entry.email}</p>
+            <p class="card-text"><strong>Pantone Value: </strong>${entry.pantone_value}</p>
+          </li>
+          <li class="list-group-item">
+            <p class="card-text"><strong>Color: </strong>${entry.color}</p>
           </li>
         </ul>
-        </div>
       </div>`;
   });
 });

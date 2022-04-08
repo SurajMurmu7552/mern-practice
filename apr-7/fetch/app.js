@@ -34,6 +34,7 @@ let fetchData = async (singleData) => {
   }
 };
 
+//get single data or all data
 let choiceOfData = () => {
   let singleData = prompt("Single post or multiple post ? yes / no");
 

@@ -1,5 +1,6 @@
 let form = document.getElementById("sumForm");
 
+//onsubmit event handler to display sum
 form.onsubmit = function (e) {
   e.preventDefault();
 
@@ -8,10 +9,12 @@ form.onsubmit = function (e) {
 
   let sum = +num1.value + +num2.value;
 
+  //create new div to add innerHtml
   let div = document.createElement("div");
   div.innerHTML = `sum of ${num1.value} & ${num2.value} is ${sum}`;
 
-  form.append(div);
+  //append to body
+  document.body.append(div);
 
   num1.value = null;
   num2.value = null;

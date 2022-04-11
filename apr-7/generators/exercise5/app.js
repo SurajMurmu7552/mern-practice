@@ -24,7 +24,6 @@ function* yieldData(callback) {
 // console.log(data.next());
 // console.log(data.next());
 // console.log(data.next());
-// console.log(data.next());
 
 function logData(limit, args) {
   let data = yieldData(args);
@@ -35,6 +34,6 @@ function logData(limit, args) {
   }
 }
 
-// logData(7, naturalNum());
+logData(7, naturalNum());
 // logData(3, ["a", "b", "c", "d", "e", "f"]);
 // logData(7, powerSeries(3, 2));

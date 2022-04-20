@@ -17,6 +17,8 @@ export default class Calculator extends Component {
     };
   }
 
+  //handles clear screen in calculator
+
   handleClear = () => {
     this.setState({
       nums: [],
@@ -27,12 +29,15 @@ export default class Calculator extends Component {
     });
   };
 
+  //saves input on click and what to show in display in state
   handleNum = (val) => {
     this.setState({
       display: this.state.display + val,
       input: this.state.input + val,
     });
   };
+
+  //saves operation in a separate array in state
 
   handleOperation = (op) => {
     let num = Number(this.state.input);
@@ -44,9 +49,12 @@ export default class Calculator extends Component {
     });
   };
 
+  //calculates result of the nums with operation
   handleResult = () => {
+    //initialize result with nums[0] in the state
     let result = this.state.nums[0];
 
+    //loop runs from index 1 of nums to end and calculates the result
     for (let i = 1; i <= this.state.nums.length; i++) {
       if (i === this.state.nums.length) {
         if (this.state.operation[i - 1] === "+")
@@ -65,12 +73,14 @@ export default class Calculator extends Component {
       }
     }
 
+    //on submition(=) if there is no second num with operation result equals to the input
     if (this.state.nums.length === 0) result = Number(this.state.input);
 
+    //if no operation is entered result is not result is not saved
     if (this.state.operation.length > 0) {
       this.setState({
         result,
-        input: "",
+        input: result.toString(),
         nums: [],
         operation: [],
         display: result,

@@ -1,0 +1,65 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+a:hover {
+  color: rgb(0, 177, 163);
+}
+.home {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+.nav {
+  height: 10vh;
+  border-bottom: 1px solid #333;
+}
+.nav-items {
+  display: flex;
+  height: 100%;
+  list-style: none;
+  align-items: center;
+}
+.nav-item {
+  margin-left: 20px;
+}
+
+/* Users */
+.users {
+  height: 90vh;
+}
+.list-items {
+  padding: 10px 20px;
+  list-style: none;
+  width: max-content;
+}
+.list-item {
+  display: flex;
+  gap: 0 40px;
+  padding-bottom: 6px;
+}
+.list-item:first-child {
+  margin-bottom: 10px;
+  border-bottom: 1px solid #333;
+}
+.list-item > p {
+  width: 200px;
+}
+
+/* profile pic  */
+
+.profile {
+  padding: 20px 40px;
+  display: flex;
+  gap: 0 30px;
+}

@@ -1,0 +1,67 @@
+.Acc {
+  width: 100%;
+  border-bottom: 1px solid #333;
+}
+
+.Acc-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  /* background-color: rgb(123, 202, 255); */
+  background-color: #333;
+  color: #fff;
+}
+
+.Acc-btn {
+  transition: all 0.2s ease-in-out;
+  border: none;
+  position: relative;
+  transform: rotate(-50deg);
+  height: 30px;
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+.Acc-btn:hover {
+  background-color: rgb(110, 110, 110);
+}
+
+.Acc-btn.active-btn {
+  transform: rotate(35deg);
+}
+
+/* custom arrow  */
+.Acc-btn > span {
+  height: 10px;
+  width: 2px;
+  border-radius: 10px;
+  background-color: black;
+  position: absolute;
+  pointer-events: none;
+}
+
+.Acc-btn > span:first-child {
+  transform: rotate(-75deg) translate(-3px, -2px);
+}
+
+.Acc-btn > span:last-child {
+  width: 2.4px;
+  transform: translate(2px, -1px);
+}
+
+.Acc-bottom {
+  text-align: left;
+  overflow: hidden;
+  height: 0;
+  transition: height 1s ease-in-out;
+}
+.Acc-bottom > p {
+  padding: 10px 20px;
+}
+
+.Acc-bottom.active-btn {
+  height: fit-content;
+}

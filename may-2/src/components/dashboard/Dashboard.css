@@ -1,0 +1,23 @@
+.Dashboard-element {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.Dashboard-title {
+  text-align: left;
+}
+
+.Dashboard-body {
+  text-align: right;
+}
+
+.Dashboard-title.header {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.Dashboard-body.header {
+  font-size: 20px;
+  font-weight: 700;
+}

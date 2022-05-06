@@ -1,0 +1,58 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+.App {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5vh 0;
+  padding: 5vh 0;
+  background-color: #282c34;
+}
+
+.App-nav {
+  background-color: rgb(255, 255, 255);
+  flex-basis: 10%;
+  width: 80%;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.App-nav .nav-items {
+  list-style: none;
+  display: flex;
+  gap: 0 40px;
+}
+
+.nav-item:hover > a {
+  /* background-color: red; */
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.App-container {
+  width: 80%;
+  flex-basis: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+/* for active link  */
+
+.active {
+  border-bottom: 1px solid #333;
+}

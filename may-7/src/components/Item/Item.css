@@ -1,0 +1,33 @@
+.Item {
+  display: flex;
+  gap: 0 10px;
+  height: 40px;
+  align-items: center;
+}
+.Item-btn {
+  flex: 0.2;
+  display: flex;
+  justify-content: center;
+}
+.Item-content {
+  padding-left: 10px;
+  flex: 0.8;
+}
+.Item .Item-btn > .icon {
+  /* display: none; */
+  background-color: green;
+  height: 20px;
+  width: 20px;
+}
+
+.Item .Item-btn > .icon > div {
+  position: absolute;
+  height: 15px;
+  width: 2px;
+  top: 50%;
+  background-color: red;
+}
+
+.Item:hover .Item-btn > .icon {
+  display: block;
+}

@@ -36,13 +36,7 @@ const basketSlice = createSlice({
       //   "Pasta",
       //   "Bread",
     ],
-    basket: [
-      {
-        count: 0,
-        item: "apple",
-        pending: null,
-      },
-    ],
+    basket: [],
   },
   reducers: {
     addToBasket(state, { payload }) {
@@ -54,39 +48,28 @@ const basketSlice = createSlice({
       });
 
       if (found) {
-        state = {
-          basket: state.basket.map((el) => {
-            if (el.item === payload.item) {
-              return {
-                ...el,
-                count: el.count + 1,
-                // pending: el.pending === null ? true : el.pending,
-              };
-            }
-            return el;
-          }),
-        };
+        state.basket.forEach((el) => {
+          if (el.item === payload.item) {
+            el.count += 1;
+          }
+        });
       } else
-        state = {
-          basket: [
-            ...state.basket,
-            { count: 0, item: payload.item, pending: true },
-          ],
-        };
+        state.basket.push({
+          count: 1,
+          item: payload.item,
+          pending: true,
+        });
+
+      console.log(state);
     },
 
     purchasedFromBasket(state, { payload }) {
-      state = {
-        basket: state.basket.map((el) => {
-          if (el.item === payload.item) {
-            return {
-              ...el,
-              pending: !state.pending,
-            };
-          }
-          return el;
-        }),
-      };
+      state.basket.forEach((el) => {
+        if (el.item === payload.item) {
+          el.pending = !el.pending;
+        }
+        return el;
+      });
     },
   },
 });

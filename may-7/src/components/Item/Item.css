@@ -3,31 +3,45 @@
   gap: 0 10px;
   height: 40px;
   align-items: center;
+  border-radius: 10px;
+  padding: 0 10px;
 }
 .Item-btn {
-  flex: 0.2;
   display: flex;
   justify-content: center;
+  align-items: center;
+  width: 22px;
+  aspect-ratio: 1;
 }
 .Item-content {
-  padding-left: 10px;
-  flex: 0.8;
+  width: 100%;
 }
 .Item .Item-btn > .icon {
-  /* display: none; */
-  background-color: green;
-  height: 20px;
-  width: 20px;
+  position: relative;
+  height: 18px;
+  width: 18px;
+  display: none;
 }
 
 .Item .Item-btn > .icon > div {
   position: absolute;
-  height: 15px;
+  height: 60%;
   width: 2px;
   top: 50%;
-  background-color: red;
+  border-radius: 10px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+}
+
+.Item .Item-btn > .icon > div:nth-child(1) {
+  width: 60%;
+  height: 2px;
 }
 
 .Item:hover .Item-btn > .icon {
   display: block;
+}
+.Item:hover {
+  background-color: rgba(0, 0, 0, 0.08);
 }

@@ -1,10 +1,13 @@
 .App {
-  display: flex;
-  flex-wrap: wrap;
 }
 .App-search {
   flex-basis: 100%;
 }
 .App-container {
   flex-basis: 50%;
+}
+
+.Dashboard {
+  display: flex;
+  flex-wrap: wrap;
 }

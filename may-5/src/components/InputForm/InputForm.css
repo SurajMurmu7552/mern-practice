@@ -1,0 +1,72 @@
+.InputForm {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+.InputForm-form {
+  position: relative;
+  background-color: #fff;
+  padding: 40px 0;
+  display: flex;
+  gap: 20px 0;
+  flex-direction: column;
+  width: 400px;
+  align-items: center;
+}
+
+.InputForm-title {
+  font-weight: 600;
+  text-decoration: underline;
+  text-transform: capitalize;
+}
+.InputForm-form > input {
+  height: 40px;
+  width: 80%;
+  outline: none;
+  padding: 0 10px;
+  border: 1px solid #333;
+  border-radius: 4px;
+}
+.InputForm-form > input[type="submit"] {
+  width: 120px;
+  border: none;
+  color: #fff;
+  background-color: rgb(59, 154, 255);
+}
+
+/* close btn  */
+.InputForm-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  /* background-color: blue; */
+  transform: rotate(45deg);
+  border-radius: 50%;
+  cursor: pointer;
+  height: 25px;
+  aspect-ratio: 1;
+}
+.InputForm-close:hover {
+  background-color: rgb(212, 212, 212);
+}
+.InputForm-close div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transform-origin: center;
+  height: 15px;
+  width: 2px;
+  background-color: #333;
+}
+.InputForm-close div:nth-child(1) {
+  width: 15px;
+  height: 2px;
+}
